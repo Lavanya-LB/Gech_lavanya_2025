@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: aqua;
+        }
+        /* @media not only media_type and (condition) and (condidtion){
+
+        }  */
+          @media only screen and (max-width:600px) and (max-width:800px){
+            .container{
+                background-color: blueviolet;
+            }
+            /* @media only screen and (min-width:600px) and (min-width:800px){
+            .container{
+                background-color: gray;
+            } */
+          }
+          </style> 
+</head>
+<body>
+    <div class="container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptatum soluta dolor aliquam quasi id reprehenderit aperiam eius, sunt sit.</p>
+</div>
+</body>
+</html>

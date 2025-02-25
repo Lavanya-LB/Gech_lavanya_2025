@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+    <style>
+        :root{
+            --aqua: aqua;
+            --anti: antiquewhite;
+        }
+        .ptag{
+           background-color: aqua; 
+        }
+        .divtag{
+            background-color: var(--anti);
+        }
+        .ptag1{
+            background-color: var(--aqua);
+        }
+        .divtag1{
+            background-color:var(--aqua);
+        }
+        .container{
+            margin: 20px auto;
+            width: 30vw;
+            height: 4cqw;
+            border: 2px solid black;
+            position:relative;
+            padding: 10px;
+        }
+
+        .child{
+            width: 60%;
+            height: 20px;
+            border: 1px solid balck;
+        }
+        .first{
+            background-color: blue;
+            z-index: 3;
+            position: relative;
+            left: 50px;
+            
+        }
+        .sec{
+            background-color: rgb(0, 255, 234);
+            position: absolute;
+            top: 10px;
+            z-index: 5;
+
+        }
+    </style>
+</head>
+<body>
+    <p class="ptag">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod consectetur sit saepe reiciendis maxime quasi asperiores llitia quisquam corporis, ?</p>
+    <div class="divtag">Lorem ipsum dolor sit amet.</div>
+    <div class="ptag1">Lorem ipsum dolor sit amet.</div>
+    <div class="divtag1">Lorem ipsum dolor sit amet.</div>
+
+    <div class="container">
+        <div class="child first">1</div>
+        <div class="child sec">2</div>
+    </div>
+</body>
+</html>

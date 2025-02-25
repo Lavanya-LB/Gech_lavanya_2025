@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudo</title>
+</head>
+<style>
+    ::selection{
+        color: red;
+        background-color: yellow;
+    }
+    .atag{
+        text-decoration: none;
+        margin-left: 20px;
+
+    }
+    .atag:hover{
+        color: rgb(230, 143, 143);
+    }
+    .atag::after{
+        content: "h";
+    }
+    .atag::before{
+        content:"i";
+    }
+    .first::first-letter{
+        font-size: 40px;
+    }
+    .sec::first-letter{
+        font-size: 40px;
+        color: gray;
+        
+    }
+
+</style>
+<body>
+    <div class="container">
+        <a href="https://cssgradient.io/" class="atag">home</a>
+        <a href="https://cssgradient.io/" class="atag">about</a>
+        <a href="https://cssgradient.io/" class="atag">contact</a>
+        <div class="first">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, dolor cum? Ipsum ducimus ipsam eum asperiores? Quia, vel similique! Expedita sed, incidunt eligendi est perferendis unde facilis amet corporis totam.</div>
+        <div class="sec">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, sequi.</div>
+    </div>
+</body>
+</html>

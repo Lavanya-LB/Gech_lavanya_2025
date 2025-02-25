@@ -1,0 +1,25 @@
+p{
+    color: blueviolet;
+}
+
+#div{
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+*{
+    border: 0dvh;
+
+}
+h1{
+    color: black;
+}
+input[type="text"]{
+font-size:"30px"
+font-style:italic;
+}
+.ptag{
+    color: antiquewhite;
+    border:10px;
+    margin-top: 20px;
+    margin: 20px 10px 10px 20;
+}

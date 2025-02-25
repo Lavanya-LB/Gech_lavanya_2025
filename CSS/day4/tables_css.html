@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table Css</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        .table_con{
+            width: 80vw;
+            height: 50vh;
+        }
+        .table_con,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+        tr:nth-child(2n){
+            background-color: grey;
+        }
+        tr:first-child{
+            background-color: green;
+            color: palevioletred;
+        }
+        tr:nth-child(2n+1){
+            background-color:rgb(241, 208, 210);
+        }
+        td,th{
+            padding: 10px;
+            text-align: right;
+            vertical-align: middle;
+        }
+        
+    </style>
+</head>
+<body>
+    <table class="table_con">
+    <tr>
+        <th>Name</th>
+        <th>Roll no</th>
+        <th>Age</th>
+        <th>Address</th>
+
+    </tr>
+
+    <tr>
+        <td>lavanya</td>
+        <td>20</td>
+        <td>21</td>
+        <td>Hsn</td>
+    </tr>
+    <tr>
+        <td>nithya</td>
+        <td>20</td>
+        <td>21</td>
+        <td>Hsn</td>
+    </tr>
+    <tr>
+        <td>varsha</td>
+        <td>20</td>
+        <td>21</td>
+        <td>Hsn</td>
+    </tr>
+</table>
+</body>
+</html>
