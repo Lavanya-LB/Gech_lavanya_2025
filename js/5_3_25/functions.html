@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>3 ways to declare a function</h1>
+    <p>1.function declaration</p>
+    <p>2.function expression</p>
+    <p>3.arrow function </p>
+    <p>synatx:
+        function function_name(para){
+        //code
+
+        }
+    <pre>
+            call a function
+    
+            function_name
+        </pre>
+
+    </p>
+
+    <h2> 4 types of function</h2>
+    <p>1. function accepting the parameter and not returning values</p>
+    <p>2. function accepting the parameter and returning values</p>
+    <p>3. function not accepting the parameter and returning values</p>
+    <p>4. function not accepting the parameter and returning values</p>
+    <script>
+        //function declaration
+        function display() {
+            console.log("this is a display function");
+        }
+        //function call
+        //display();
+
+        //1.
+        function para_not_return(number) {
+            console.log(`the given number is ${number}`);
+        }
+        para_not_return("hello");//argument
+        //2.
+
+        function para_return(number) {
+            return number;
+        }
+        const res = para_return(335);
+        console.log(`the result is ${res}`);
+
+        //3.
+
+        function not_para_not_return(number) {
+            console.log("this is third type");
+        }
+        not_para_not_return();
+
+        //4.
+        function not_para_not_return(number) {
+            return 325;
+        }
+        const res3 = not_para_not_return();
+        console.log(`the result is ${res3}`);
+
+        //function declarartion
+
+        // the given number is even or odd
+        function iseven(number) {
+            return number % 2 === 0;
+        }
+        const res6 = iseven(3);
+        if (res6 === true) {
+            console.log("even number");
+        }
+        else {
+            console.log("odd number");
+        }
+
+        //function expression
+
+        const display1 = function () {
+            console.log("this is display expression");
+        }
+        display1();
+        //3.arrow function
+        const display2 = () => {
+            console.log("this is a display arrow fun");
+
+        }
+        display2();
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
