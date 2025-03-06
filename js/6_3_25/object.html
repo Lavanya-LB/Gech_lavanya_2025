@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+
+<body>
+    <h1>OBJECTS</h1>
+    <p>an object is a data structure that stores key-value pairs. It is used to represent real-world entities like a
+        person, car, or book, where each entity has properties and behaviors.</p>
+    <p>access properties 1. Using Dot Notation (.) 2. Using Bracket Notation ([])</p>
+    <script>
+        const car_obj = {
+            carName: "TATA",
+            model: "ferrari",
+            type: "EV",
+            wheels: 4,
+            "eight seat": true,
+            speed: function () {
+                console.log("TATA is moving by 60km/h");
+            }
+        }
+        console.log(car_obj);
+        console.log(car_obj.carName);
+        console.log(car_obj.wheels);
+        car_obj.speed();
+        console.log(car_obj["eight seat"]);
+
+        //adding item to an object
+        car_obj.color = "red";
+        console.log("car_obj:", car_obj);
+
+        const new_obj = { ...car_obj };
+        console.log("car_obj:", new_obj);
+        //deleting item from the object
+        delete car_obj.color;
+        console.log("After car object:", car_obj);
+    </script>
+
+</body>
+
+</html>

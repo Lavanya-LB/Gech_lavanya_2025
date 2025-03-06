@@ -92,11 +92,41 @@
         }
         display2();
 
+        // Function expression
+        const greet = function (name) {
+            return `Hello, ${name}!`;
+        };
+
+        // Calling the function
+        console.log(greet("John")); // Output: Hello, John!
+
+        // fun expre
+        const square = function (num) {
+            return num * num;
+        };
+
+        // Calling the function
+        console.log(square(5));
+        console.log(square(10));
+
+        // Arrow function example
+        const add = (a, b) => a + b;
+
+        // Calling the function
+        console.log(add(5, 3)); // Output: 8
 
 
+        const iseven = num => num % 2 == 0;
+        const rev = iseven(8);
+        console.log(rev);
 
 
+        // arrow exp
+        const getArea = (length, width) => length * width;
 
+        // Calling the function
+        console.log(getArea(5, 10)); // Output: 50
+        console.log(getArea(7, 3));  // Output: 21
 
 
 

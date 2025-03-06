@@ -8,12 +8,33 @@
 </head>
 
 <body>
-    <h1>Strings</h1>
-    <p>string</p>
-    <p>Slice</p>
-    <p>Subdtring</p>
-    <p>substr</p>
+    <h1>Strings in JS</h1>
+    <p>Methods in Strings</p>
+    <p>1. length</p>
+    <p>2. slice</p>
+    <p>3. substring</p>
+    <p>4. substr</p>
+    <p>5. replace</p>
+    <p>6. toUpperCase()</p>
+    <p>7. toLowerCase()</p>
+    <p>8. trim()</p>
+    <p>9. indexof()</p>
+    <p>10. startswith()</p>
+    <p>11. endsswith()</p>
+    <p>12. includes()</p>
+    <p>13. concat()</p>
     <script>
+        //let str1 = "Hello world";
+        //console.log(str1);
+        //console.log(typeof str1);
+
+        let str1 = "Hello world";
+        const len = str1.length
+        console.log(`The length of string ${str1} is : ${len}`);
+        //console.log("The length of string " + str1 + " is : " + len);
+        //console.log("The length of string ", str1, " is : ", len);
+
+
         //2.slice
         let str2 = "javascript"
         let str3 = str2.slice("2,7");
@@ -31,7 +52,7 @@
         let str6 = "hello word";
         let str7 = str6.substr(2, 7);
         console.log(`the string is ${str7}`);
-        console.log(`the string is ${str5.substring(-9, 7)}`);
+        console.log(`the string is ${str6.substring(-9, 7)}`);
 
         //5.replace
         let str8 = "Java script";
@@ -48,11 +69,11 @@
         let str14 = str13.toLowerCase();
         console.log(`the string is ${str14}`);
 
-        //8.trim
-        let str15 = "      hiiiii   ";
-        let str16 = str15.trim()
-        console.log(`the string is ${str15}`);
-        console.log(`the string is ${str16}`);
+        //8. trim()
+        let str10 = "       hello          ";
+        let str20 = str10.trim()
+        console.log(`The string is ${str10}`);
+        console.log(`The string is ${str20}`);
 
         //9.indexof
         let str17 = "hello javascript";
@@ -66,22 +87,18 @@
 
         //11endwith()
         let str19 = "hello javascript";
-        let res1 = str19.endsWith("scr")
-        console.log(`the Result is ${res1}`);
+        let res2 = str19.endsWith("scr")
+        console.log(`the Result is ${res2}`);
 
-        //12 includes()
+        //12. includes()
+        let str22 = "Hello Java and Javascript";
+        let res1 = str22.includes("Python");
+        console.log(`The Result is ${res1}`);
 
-        let inc = str17.includes("ae");
-
-
-
-
-
-
-
-
-
-
+        //13. concat()
+        let str15 = "Hello";
+        let str16 = str15.concat(" ", "World");
+        console.log(`The Result is ${str16}`);
     </script>
 
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Destructuring</title>
+</head>
+
+<body>
+    <h1>Object Destructuring</h1>
+    <p>spread operator(....)</p>
+
+    <script>
+        const obj1 = {
+            fname: "Anu",
+            age: 12,
+            address: "ckm",
+            gender: "female"
+
+        }
+        console.log(obj1);
+        // const { fname, age, address, gender } = obj1;
+        // console.log(fname);
+        // console.log(age);
+        // console.log(address);
+        // console.log(gender);
+        const { fname, ...rest } = obj1;
+        console.log(fname);
+        console.log(rest);
+    </script>
+
+</body>
+
+</html>
