@@ -1,0 +1,42 @@
+from django.shortcuts import render, redirect, get_object_or_404
+from . import models 
+from . import forms
+# Create your views here.
+def home(request):
+    if request.method== "POST":
+        std_form = forms.studentsForm(request.POST)
+        if std_form.is_valid():
+           std_form.save()
+           student_form = forms.studentsForm()
+    else:
+        student_form = forms.studentsForm()
+    student = models.student.objects.all()
+
+    context = {
+        "student": student,
+        "student_form": student_form
+        }
+    return render(request, "home.html", context)
+
+def about(request):
+    return render(request, "about.html")
+
+def edit_student(request,id):
+    student=models.student.objects.get(id=id)
+    if request.method == "POST":
+        std_form = forms.studentsForm(request.POST, instance=student)
+        if std_form.is_valid():
+            std_form.save()
+            return redirect("home")
+    else:
+        student_form=forms.studentsForm(instance=student)
+    context={
+        "student_form":student_form
+        }
+    return render(request,"edit.html",context)
+
+def delete_student(request, id):
+    student = models.student.objects.get(id=id)
+    if student:
+        student.delete()
+        return redirect("home")

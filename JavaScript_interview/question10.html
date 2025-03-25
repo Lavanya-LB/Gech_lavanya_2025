@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>explain promises with example</h1>
+    <script>
+        const obj = ["rice", "tomato", "salt", "onion", "oil"];
+        let mypromise = new promise((resolve, reject) => {
+            if (obj.includes("rice", "tomato", "salt", "onion", "oil")) {
+                console.log("it contain all the element wait for time");
+                setTimeout(() => {
+                    return resolve("tomoto gojju is ready")
+                }, 2000)
+            }
+            else {
+                return reject("now it is not applicable")
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

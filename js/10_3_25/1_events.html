@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+
+  <body>
+    <h1>Events in JS</h1>
+    <p>1.Mouse</p>
+    <p>2.Keyboard</p>
+    <p>3.form</p>
+    <p>4.window</p>
+    <p>5.document</p>
+    <p>6.Clipboard</p>
+    <p>7.Media</p>
+    <h3 id="htag">Hello html</h3>
+    <button onclick="handleClick()">Change the text</button>
+    <button id="btn">add event the text</button>
+    <input type="text" id="inputField" placeholder="Enter a key" />
+    <p id="keyMsg"></p>
+    <h3>Form events</h3>
+    <p>1.input</p>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Enter username"
+    />
+    <p id="result"></p>
+    <select name="number" id="Number">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <p id="result"></p>
+    <form id="ContactForm">
+      <h1>contact Form</h1>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="enter username"
+      />
+      <input type="email" name="email" id="email" placeholder="enter Email" />
+      <input type="text" name="msg" id="msg" placeholder="msg" />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      // //1.Mouse event
+      // const handleClick = () => {
+      //     const htag = document.querySelector("#htag");
+      //     htag.textContent = "hello js";
+      // }
+      //addeventlistner
+      const btn = document.querySelector("#btn");
+      const htag = document.querySelector("#htag");
+      btn.addEventListener("click", () => {
+        htag.textContent = "hello js";
+        htag.style.backgroundColor = "aqua";
+      });
+      //Keyboard events
+
+      document
+        .getElementById("inputField")
+        .addEventListener("keypress", function (event) {
+          document.getElementById("keyMsg").innerText =
+            "You pressed: " + event.key;
+        });
+      //form events
+      const username = document.getElementById("username");
+      const result = document.getElementById("result");
+      // username.addEventListener("focus", () => {
+      //     result.innerText = "result is: " + username.value
+      //     console.log("foucs event clicked");
+      // })
+      username.addEventListener("blur", () => {
+        result.innerText = "result is: " + username.value;
+        console.log("bulred event triggered");
+      });
+      document.getElementById("Number").addEventListener("change", () => {
+        console.log("Select input field is changed");
+      });
+
+      const contactForm = document.querySelector("#ContactForm");
+      contactForm.addEventListener("focus", (event) => {
+        event.preventDefault();
+        console.log("hello");
+      });
+    </script>
+  </body>
+</html>

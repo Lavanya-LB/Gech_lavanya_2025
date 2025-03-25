@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Constructor</h1>
+
+    <script>
+        const Student = {
+            name: "Sinchana",
+            age: 20,
+            marks: 10,
+        }
+        // console.log("before");
+        // console.log(Student.name);
+        // console.log(Student.age);
+        // console.log(Student.marks);
+        //increased_marks = (res) => {
+        //    console.log(res + res * 0.1);
+        //}
+        //increased_marks(Student.marks);
+        // res1 = increased_marks(Student.marks)
+        // console.log("increased marks is: ", res1); 
+
+        console.log("before");
+        console.log(Student);
+        increased_marks = () => {
+            return this.marks + this.marks * 0.1;
+        }
+        console.log("After");
+        console.log(Student.increased_marks());
+    </script>
+</body>
+
+</html>
