@@ -10,30 +10,35 @@ class parent2{
 		this.age = age;
 		Address = address;
 	}
-	
+	public void display() {
+		System.out.println(this.name);
+		System.out.println(this.age);
+		System.out.println(this.Address);
+	}
 	@Override
 	public String toString() {
 		return "parent2 [name=" + name + ", age=" + age + ", Address=" + Address + "]";
 	}
+	
 
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public String getAddress() {
-		return Address;
-	}
-	public void setAddress(String address) {
-		Address = address;
-	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public int getAge() {
+//		return age;
+//	}
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+//	public String getAddress() {
+//		return Address;
+//	}
+//	public void setAddress(String address) {
+//		Address = address;
+//	}
 	
 }
 
@@ -54,6 +59,13 @@ public class Pojo_Concrete {
 		 * getter and setters method
 		 * 
 		 */
+		//parent2 parent=new parent2("lav",24,"hassan");
+		
+		parent2 parent=new parent2("lav",24,"hassan");
+	//	parent.setName("raksh");
+		//System.out.println(parent.getName());
+		 parent.display();
+	//	System.out.println(parent);
 		
 
 	}

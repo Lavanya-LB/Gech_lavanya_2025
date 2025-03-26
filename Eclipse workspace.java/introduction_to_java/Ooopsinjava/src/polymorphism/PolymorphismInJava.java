@@ -1,7 +1,7 @@
 package polymorphism;
 
 class Person{
-	public void walking() {
+	public   void walking() {
 		System.out.println("the person is walking");
 	}
 }

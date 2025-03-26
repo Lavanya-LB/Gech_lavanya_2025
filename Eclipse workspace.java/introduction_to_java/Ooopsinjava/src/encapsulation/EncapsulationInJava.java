@@ -4,6 +4,7 @@ class Student{
 	private String name;
 	private int age;
 	private double marks;
+	
 	//creating constructors and passing the values here
 	public String getName() {
 		return name;
@@ -31,6 +32,7 @@ public class EncapsulationInJava {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Student student = new Student();
+		//student.run();
 		student.setName("lavanya");
 		System.out.println(student.getName());
 		student.setAge(21);

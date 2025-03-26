@@ -1,6 +1,8 @@
 package inheritence;
 //1. single level
 
+
+
 class Parent{
 	int pData = 100;
 	public void parentMethod() {
@@ -11,6 +13,7 @@ class Child2 extends Parent{
 	int cData = 200;
 	public void childMethod() {
 		System.out.println("this is child data");
+		
 	}
 }
 //    void defaultMethod() {
