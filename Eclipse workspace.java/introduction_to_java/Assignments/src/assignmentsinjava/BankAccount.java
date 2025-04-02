@@ -35,7 +35,7 @@ public class BankAccount {
 		//while ensuring the balance cannot go negative.
 
 
-		 BankAccount account = new BankAccount("123456", "John Doe", 1000.0);
+		 BankAccount account = new BankAccount("66025260", "lavanya", 1000.0);
 	        System.out.println(account.getAccountInfo());
 	        account.deposit(500);
 	        account.withdraw(300);
