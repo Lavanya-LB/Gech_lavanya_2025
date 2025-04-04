@@ -1,14 +1,110 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>List of Student</title>
+    <style>
+        /* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e7ff; /* Soft blue-gray */
+    margin: 50px auto;
+    max-width: 800px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #374151; /* Dark gray */
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f3f4f6; /* Light hover effect */
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Button Styling */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    text-decoration: none;
+    background-color: #4f46e5; /* Deep blue */
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+a:hover {
+    background-color: #4338ca; /* Slightly darker blue */
+    transform: scale(1.05); /* Subtle hover effect */
+}
+        
+        
+    </style>
 </head>
-
 <body>
-    <h1>This is home page</h1>
-</body>
+    <h1> List of Student</h1>
+    <a th:href = "@{/add-student}" >add student</a>
+    <div th:if="${success}">
+    	<p th:text="${success}"></p>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${student}">
+            
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.email}"></td>
+               <td>
+               <a th:href="@{/std-edit(id=${student.id})}">Edit</a>
+               <a th:href="@{/std-delete(id=${student.id})}">Delete</a>
+            </tr>
+        </tbody>
+    </table>
 
+   
+</body>
 </html>

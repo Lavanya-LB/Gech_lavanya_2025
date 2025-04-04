@@ -18,14 +18,17 @@ public class StudentValidations {
 	private String email;
 	@Column(name = "std_password")
 	private String password;
-	public StudentValidations(long id, String name, int age, String email,  String password) {
+	@Column(name = "imagepath")
+	private String imagepath;
+	
+	public StudentValidations(long id, String name, int age, String email, String password, String imagepath) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.email = email;
-		
-		this.password= password;
+		this.password = password;
+		this.imagepath = imagepath;
 	}
 	public StudentValidations() {
 		super();
@@ -60,6 +63,12 @@ public class StudentValidations {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getImagepath() {
+		return imagepath;
+	}
+	public void setImagepath(String imagepath) {
+		this.imagepath = imagepath;
 	}
 	
 	
