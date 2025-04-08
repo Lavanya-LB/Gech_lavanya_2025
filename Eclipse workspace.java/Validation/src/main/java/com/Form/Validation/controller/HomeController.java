@@ -1,14 +1,15 @@
 package com.Form.Validation.controller;
 
-
+//import java.lang.classfile.Attribute;
 
 import java.util.List;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,6 +54,10 @@ public class HomeController {
     }
     @PostMapping("/edit-student")
     public String updateStudent(@RequestParam Long id, @Valid @ModelAttribute StudentDTO studentDTO, BindingResult result, Model model,RedirectAttributes attribute) {
+    	StudentValidations student1 = studentRepository.findByEmail(studentDTO.getEmail());
+		if(student1!=null && student1.getId()!=id) {
+			result.addError(new FieldError("StudentDTO","email","Email is a;ready exits"));
+		}
     	if(result.hasErrors()) {
     		StudentValidations student = studentRepository.findById(id).get();
     		model.addAttribute("student",student);
@@ -80,9 +85,22 @@ public class HomeController {
 
     @PostMapping("/add-student")
     public String addStudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result, Model model, RedirectAttributes attribute) {
-        if (result.hasErrors()) {
+    	StudentValidations student = studentRepository.findByEmail(studentDTO.getEmail());
+    		if(student!=null) {
+    			result.addError(new FieldError("StudentDTO","email","Email is a;ready exits"));
+    		}
+    	
+    			
+        if(studentDTO.getImage().isEmpty()) {
+        	result.addError(new FieldError("StudentDTO", "image", "Image is required"));
+        }
+        if(studentDTO.getResume().isEmpty()) {
+        	result.addError(new FieldError("StudentDTO", "resume", "resume is required"));
+        }
+    	if (result.hasErrors()) {
             model.addAttribute("studentDTO", studentDTO); // Ensure form retains the entered values
             return "add-student";
+            
         }
         System.out.println(studentDTO.getName());
         studentService.saveStudent(studentDTO);

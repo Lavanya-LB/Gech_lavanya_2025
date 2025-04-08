@@ -1,34 +1,34 @@
 package com.Form.Validation.model;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="studentForms")
 public class StudentValidations {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "std_id")
 	private long id;
-	@Column(name = "std_name")
 	private String  name;
-	@Column(name = "std_age")
 	private int age;
-	@Column(name = "std_email")
+	@Column(unique = true)
 	private String email;
-	@Column(name = "std_password")
 	private String password;
-	@Column(name = "imagepath")
-	private String imagepath;
-	
-	public StudentValidations(long id, String name, int age, String email, String password, String imagepath) {
+	private String imagePath;
+	private String resumePath;
+	public StudentValidations(long id, String name, int age, String email,  String password,String imagePath,String resumePath) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.email = email;
-		this.password = password;
-		this.imagepath = imagepath;
+		this.password= password;
+		this.imagePath = imagePath;
+		this.resumePath = resumePath;
 	}
 	public StudentValidations() {
 		super();
@@ -64,11 +64,17 @@ public class StudentValidations {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getImagepath() {
-		return imagepath;
+	public String getImagePath() {
+		return imagePath;
 	}
-	public void setImagepath(String imagepath) {
-		this.imagepath = imagepath;
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	public String getResumePath() {
+		return resumePath;
+	}
+	public void setResumePath(String resumePath) {
+		this.resumePath = resumePath;
 	}
 	
 	

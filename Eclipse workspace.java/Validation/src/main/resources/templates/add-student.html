@@ -2,13 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Student</title>
+
 </head>
 <body>
     <h1>Add Student</h1>
     
-    <form th:action="@{/add-student}" method="post" th:object="${studentDTO}" novalidate>
-  <label for="name">Name:</label>
+    <form th:action="@{/add-student}" enctype="multipart/form-data" method="post" th:object="${studentDTO}">
+        <!-- Name Input -->
+        <label for="name">Name:</label>
         <input type="text" th:field="*{name}" id="name" placeholder="Enter your name"><br>
         <p th:if="${#fields.hasErrors('name')}" th:text="${#fields.errors('name')}"></p>
 
@@ -26,9 +28,18 @@
         <label for="password">Password:</label>
         <input type="password" th:field="*{password}" id="password" placeholder="Enter your Password"><br>
         <p th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')}"></p>
-
+		
+		<label for="image">Images</label>
+		<input type="file" id="image"  th:field="*{image}"><br>
+		<p th:if="${#fields.hasErrors('image')}" th:text="${#fields.errors('image')}"></p>
+		
+		<!-- resume pdf -->
+		<label for="pdf">Resume</label>
+		<input type="file" id="pdf"  th:field="*{resume}"><br>
+		<p th:if="${#fields.hasErrors('resume')}" th:text="${#fields.errors('resume')}"></p>
+		
         <!-- Submit Button -->
-        <input type="submit" value="add Student">
-    
+        <input type="submit" value="Add Student">
+    </form>
 </body>
 </html>

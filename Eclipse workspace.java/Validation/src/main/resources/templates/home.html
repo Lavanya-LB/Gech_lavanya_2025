@@ -1,85 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Student</title>
+    <title>Student List</title>
     <style>
-        /* Basic Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e7ff; /* Soft blue-gray */
-    margin: 50px auto;
-    max-width: 800px;
-    text-align: center;
-    color: #333;
-}
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 30px;
+        background: linear-gradient(135deg, #dff6ff, #b2f7ef);
+        color: #333;
+    }
 
-h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 20px;
-}
+    h1 {
+        color: #1b262c;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 20px;
-}
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-left:50px;
+        justify-content :center;
+        align-items :center;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-th, td {
-    padding: 14px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
+    th, td {
+        padding: 14px 18px;
+        border-bottom: 1px solid #e6e6e6;
+        text-align: left;
+    }
 
-th {
-    background-color: #374151; /* Dark gray */
-    color: white;
-    font-weight: bold;
-}
+    th {
+        background-color: #00a8cc;
+        color: #fff;
+        font-weight: 600;
+    }
 
-tr:hover {
-    background-color: #f3f4f6; /* Light hover effect */
-}
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
 
-tbody tr:last-child td {
-    border-bottom: none;
-}
+    tr:hover {
+        background-color: #f1f1f1;
+    }
 
-/* Button Styling */
-a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 20px;
-    text-decoration: none;
-    background-color: #4f46e5; /* Deep blue */
-    color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
-}
+    .add-btn {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 12px 25px;
+        background-color: #ff6f61;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
-a:hover {
-    background-color: #4338ca; /* Slightly darker blue */
-    transform: scale(1.05); /* Subtle hover effect */
-}
-        
-        
+    .add-btn:hover {
+        background-color: #e65b50;
+        transform: scale(1.05);
+    }
     </style>
 </head>
 <body>
-    <h1> List of Student</h1>
-    <a th:href = "@{/add-student}" >add student</a>
-    <div th:if="${success}">
-    	<p th:text="${success}"></p>
-    </div>
-    
+
+    <h1>Student List</h1>
+
+    <a th:href="@{add-student}" class="add-btn">+ Add Student</a>
+	<div th:if="${success}">
+	    <p th:text="${success}"></p>
+	</div>
+
     <table>
         <thead>
             <tr>
@@ -87,24 +86,32 @@ a:hover {
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
-                <th>Action</th>
-                
+                <th>Images</th>
+                <th>Resume</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="student : ${student}">
-            
-                <td th:text="${student.id}"></td>
-                <td th:text="${student.name}"></td>
-                <td th:text="${student.age}"></td>
-                <td th:text="${student.email}"></td>
-               <td>
-               <a th:href="@{/std-edit(id=${student.id})}">Edit</a>
-               <a th:href="@{/std-delete(id=${student.id})}">Delete</a>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}">1</td>
+                <td th:text="${student.name}">Name</td>
+                <td th:text="${student.age}">Age</td>
+                <td th:text="${student.email}">Email</td>
+                <td >
+                	<img alt="image" width="80px" height="80px" th:src ="@{'image/'+${student.imagePath}}">
+                	</td>
+                <td>
+                	<a th:href="@{'resume/'+${student.resumePath}}" target="_blank">View Resume</a>
+                	<p th:text="${student.resumePath}"></p>
+                </td>
+                <td>
+			        <a th:href="@{/std-edit(id=${student.id})}">edit</a>              
+    				<a th:href="@{/std-delete(id=${student.id})}">delete</a>  
+                </td>
             </tr>
         </tbody>
     </table>
 
-   
 </body>
 </html>
+    
